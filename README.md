@@ -62,6 +62,22 @@ stream {
 ```
 
 
+You can configure a new backend server for different services/challenges.
+
+```
+
+    upstream <adventure_name> {
+        server <servername>:22;
+    }
+
+    server {
+        listen       24;
+        allow  192.168.0.x/32;
+        deny   all;
+        proxy_pass   <adventure_name>;
+    }
+```
+
 
 
 There is a WordPress plugin which allows for registration whitelist/blacklist of IP addresses to limit DDOS attacks.

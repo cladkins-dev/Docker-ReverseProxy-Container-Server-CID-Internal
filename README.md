@@ -1,4 +1,5 @@
-Disposable Docker Containers servered over the same port. (Works with VNC and services too, such as webservers, databases, etc) Think 10 minute mail for docker containers, once you logout the container is gone!
+Disposable Docker Containers served over the same port. 
+(Works with VNC and services too, such as webservers, databases, etc) Think 10 minute mail for docker containers, once you logout the container is gone!
 
 Principles used:
 

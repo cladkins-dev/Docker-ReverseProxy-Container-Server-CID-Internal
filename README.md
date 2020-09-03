@@ -4,6 +4,65 @@ Principles used:
 
 Reverse Proxy, Docker Sock, and NodeJS
 
+
+Recomended Implementation:
+
+Nginx Proxy using a config such as:
+
+```
+
+
+stream {
+    upstream loadbalancer_adventure_01 {
+        server sshswitchboard-adventure-01:22;
+    }
+
+
+    upstream loadbalancer_adventure_02 {
+        server sshswitchboard-adventure-02:22;
+    }
+
+
+    upstream loadbalancer_adventure_03 {
+        server sshswitchboard-adventure-03:5901;
+    }
+
+
+
+
+    server {
+        listen       22;
+        allow  192.168.0.x/32;
+        deny   all;
+        proxy_pass  loadbalancer_adventure_01;
+    }
+
+    server {
+        listen       23;
+        allow  192.168.0.x/32;
+        deny   all;
+        proxy_pass   loadbalancer_adventure_02;
+    }
+
+
+    server {
+        listen       24;
+        allow  192.168.0.x/32;
+        deny   all;
+        proxy_pass   loadbalancer_adventure_03;
+    }
+
+
+
+}
+
+
+
+```
+
+
+
+
 There is a WordPress plugin which allows for registration whitelist/blacklist of IP addresses to limit DDOS attacks.
 
 The reccomended usage of this application is to allow similar functionality to http://OverTheWire.org, you can deploy your own docker images via the server. 

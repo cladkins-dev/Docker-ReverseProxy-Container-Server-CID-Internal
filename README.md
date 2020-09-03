@@ -1,5 +1,10 @@
 Disposable Docker Containers servered over the same port. (Works with VNC and services too, such as webservers, databases, etc) Think 10 minute mail for docker containers, once you logout the container is gone!
 
+Principles used:
+
+Reverse Proxy, Docker Sock, and NodeJS
+
+There is a WordPress plugin which allows for registration whitelist/blacklist of IP addresses to limit DDOS attacks.
 
 The reccomended usage of this application is to allow similar functionality to http://OverTheWire.org, you can deploy your own docker images via the server. 
 
